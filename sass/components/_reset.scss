@@ -1,0 +1,7 @@
+@use "../abstracts/smart-grid";
+
+@include smart-grid.reset();
+
+* {
+  font-family: AdobeCleanUX_regular;
+}

@@ -1,0 +1,444 @@
+@use "../abstracts" as abs;
+
+.portfolio-section {
+  background-color: abs.$gray5;
+  color: abs.$gray1;
+}
+
+.portfolio-container {
+  @include abs.wrapper();
+  background-color: abs.$gray4;
+  // max-width: abs.rem(1200);
+  // max-width: 1200px;
+  // margin: 0 auto;
+  &:focus-within {
+    // border: 2px solid abs.$l-blue;
+    outline: 2px solid abs.$l-blue;
+  }
+  // &:hover {
+  //   border: 2px solid abs.$l-blue;
+  // }
+}
+
+.portfolio-title {
+  background-color: abs.$gray4;
+  display: inline-flex;
+  // align-self: flex-start;
+  // flex-grow: 0;
+  align-items: baseline;
+  border-bottom: abs.rem(2) solid abs.$gray1;
+  // border-radius: abs.rem(5) abs.rem(5) 0 0;
+  margin: abs.rem(10) 0 abs.rem(13) abs.rem(22);
+
+  &__lable {
+    @include abs.square(18);
+    background-color: abs.$gray1;
+    margin-right: abs.rem(15.5);
+  }
+
+  &__title {
+    font-size: abs.rem(26);
+  }
+
+  &__img {
+    margin: 0 abs.rem(15.5);
+
+    &--cros {
+      margin-right: abs.rem(15.5);
+    }
+
+    &--hamb {
+      margin-left: abs.rem(15.5);
+    }
+  }
+}
+
+.portfolio-subtitle {
+  display: flex;
+}
+
+.hud {
+  @include abs.size(6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // padding-left: abs.rem(24);
+  // padding-bottom: abs.rem(12);
+  overflow: hidden;
+}
+
+.hud-controls {
+  // @include abs.row-flex();
+  display: flex;
+  overflow-wrap: normal;
+  align-items: center;
+  padding-left: abs.rem(24);
+  margin-bottom: abs.rem(5);
+
+  &__time {
+    text-align: center;
+  }
+
+  &__totaltime {
+    font-family: AdobeCleanUX_bold;
+    font-size: abs.rem(25);
+    color: abs.$l-blue;
+    line-height: 1;
+  }
+
+  &__totalworks {
+    font-size: abs.rem(15);
+    color: abs.$d-blue;
+    line-height: 1;
+  }
+
+  &__search {
+    display: inline-flex;
+    flex-grow: 1;
+    margin-left: abs.rem(20);
+    // align-items: center;
+
+    @include abs.xs-block() {
+      display: none;
+    }
+
+    &::before {
+      content: url("../footages/potfSection/searchicon.svg");
+      background-color: abs.$gray5;
+      border: 1px solid #4e4e4e;
+      border-right: none;
+      border-top-left-radius: abs.rem(5);
+      border-bottom-left-radius: abs.rem(5);
+      padding: abs.rem(2);
+      padding-right: 0;
+    }
+    & input {
+      background-color: abs.$gray5;
+      border: 1px solid #4e4e4e;
+      border-left: none;
+      border-top-right-radius: abs.rem(5);
+      border-bottom-right-radius: abs.rem(5);
+      color: abs.$gray1;
+      padding: abs.rem(2);
+      width: 100%;
+      min-width: abs.rem(50);
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__buttons {
+    margin-left: abs.rem(20);
+
+    @include abs.xs-block() {
+      display: none;
+    }
+
+    & ul {
+      display: flex;
+
+      & li {
+        margin-right: abs.rem(10);
+
+        & img {
+          @include abs.square(25);
+          max-width: none;
+        }
+      }
+    }
+  }
+}
+
+.bars {
+  @include abs.size(6);
+  margin-right: abs.rem(15);
+  border: 2px solid #000;
+  border-top-left-radius: abs.rem(15);
+  overflow: hidden;
+  align-items: center;
+  // padding-left: abs.rem(5);
+  &__scale {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    // background-color: abs.$gray1;
+    height: abs.rem(7);
+    // padding: 0 abs.rem(8);
+    border: 1px solid abs.$gray5;
+    &::before {
+      content: "";
+      width: abs.rem(8);
+      // height: abs.rem(10);
+      background-color: abs.$l-blue;
+      border-top-left-radius: abs.rem(3);
+      border-bottom-left-radius: abs.rem(3);
+      border: 1px solid abs.$gray5;
+      height: inherit;
+    }
+
+    &::after {
+      content: "";
+      width: abs.rem(8);
+      // height: abs.rem(10);
+      background-color: abs.$l-blue;
+      border-top-right-radius: abs.rem(3);
+      border-bottom-right-radius: abs.rem(3);
+      border: 1px solid abs.$gray5;
+      height: inherit;
+    }
+  }
+  &__bar {
+    background-color: #666;
+    width: 100%;
+    height: inherit;
+    border: 1px solid #000;
+  }
+
+  &__time {
+    // padding: 0 abs.rem(7);
+    & ul {
+      display: flex;
+      justify-content: space-between;
+
+      & li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        &:first-child {
+          & .bars__lines {
+            height: abs.rem(15);
+          }
+        }
+
+        &:nth-child(2n) {
+          @include abs.md-block() {
+            display: none;
+          }
+        }
+
+        &:nth-child(3n) {
+          @include abs.xs-block() {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  &__lines {
+    background-color: abs.$gray1;
+    width: 2px;
+    height: abs.rem(10);
+    margin-top: auto;
+  }
+
+  &__workarea {
+    @extend .bars__scale;
+    height: abs.rem(25);
+    margin-bottom: abs.rem(5);
+  }
+}
+
+.hud-header {
+  background-color: #333;
+  border-top: 2px solid abs.$gray5;
+  border-bottom: 2px solid abs.$gray5;
+  display: flex;
+  padding: abs.rem(5) 0 abs.rem(5) abs.rem(12);
+  font-family: "AdobeCleanUX_light";
+
+  &__toggleicons {
+    display: flex;
+    align-items: center;
+    border-right: 2px solid #000;
+    padding-right: abs.rem(5);
+    @include abs.xs-block() {
+      display: none;
+    }
+    & ul {
+      display: flex;
+
+      & li {
+        @include abs.square(20);
+        display: flex;
+        margin-right: abs.rem(2);
+        justify-content: center;
+
+        // &:nth-child(1) {
+        //   & img {
+        //     width: abs.rem(15);
+        //   }
+        // }
+
+        &:nth-child(3) {
+          & img {
+            width: abs.rem(11);
+          }
+        }
+
+        & img {
+          width: abs.rem(15);
+          max-width: none;
+        }
+      }
+    }
+  }
+
+  &__lable {
+    display: flex;
+    padding: 0 abs.rem(10) 0 abs.rem(15);
+    border-right: 2px solid #000;
+    align-items: center;
+    & img {
+      width: abs.rem(14);
+      max-width: none;
+    }
+    @include abs.sm-block() {
+      display: none;
+    }
+  }
+
+  &__number {
+    display: flex;
+    padding: 0 abs.rem(10) 0 abs.rem(5);
+    border-right: 2px solid #000;
+    align-items: center;
+    @include abs.sm-block() {
+      display: none;
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-grow: 1;
+    padding: 0 abs.rem(5);
+    border-right: 2px solid #000;
+    overflow: hidden;
+    align-items: center;
+
+    & p {
+      font-family: "AdobeCleanUX_light";
+    }
+  }
+
+  &__trkmat {
+    display: flex;
+    border-right: 2px solid #000;
+    padding: 0 abs.rem(5);
+    margin-right: abs.rem(10);
+    overflow: hidden;
+    @include abs.md-block() {
+      display: none;
+    }
+    & p {
+      font-family: "AdobeCleanUX_light";
+    }
+  }
+}
+
+.portfLayer {
+  display: flex;
+  height: abs.rem(26);
+}
+
+.portfLayer-left {
+  @extend .hud;
+  flex-direction: row;
+  background-color: #303030;
+  padding: abs.rem(1) 0;
+  &__toggleicons {
+    @extend .hud-header__toggleicons;
+    padding-left: abs.rem(12);
+    border: none;
+    & ul {
+      & li {
+        background-color: #222;
+      }
+    }
+  }
+  &__lable {
+    @extend .hud-header__lable;
+    // margin: 0;
+    padding: 0;
+    border: none;
+    & img {
+      width: abs.rem(7);
+      padding: 0 abs.rem(7);
+    }
+  }
+  &__lable-item {
+    // @extend .portfolio-title__lable;
+    @include abs.square(18);
+    background-color: #a9ccc8;
+  }
+  &__number {
+    @extend .hud-header__number;
+    border: none;
+    & p {
+      margin-right: auto;
+    }
+  }
+  &__name {
+    @extend .hud-header__name;
+    // overflow: hidden;
+    & img {
+      height: abs.rem(20);
+      max-width: none;
+      margin-right: abs.rem(5);
+    }
+    border: none;
+  }
+
+  &__trkmat {
+    @extend .hud-header__trkmat;
+    border: none;
+    justify-content: space-between;
+
+    & img {
+      margin-right: abs.rem(8);
+    }
+
+    & select {
+      background-color: #1c1c1c;
+      border: none;
+      color: abs.$gray1;
+      font-family: "AdobeCleanUX_light";
+      height: fit-content;
+
+      & option {
+        border-radius: 0;
+        border: none;
+        background-color: red;
+      }
+    }
+  }
+}
+
+.portfLayer-right {
+  @extend .bars;
+  border-radius: 0;
+  &__barbg {
+    @extend .bars__scale;
+    height: 100%;
+    &::before {
+      background: none;
+      border: none;
+    }
+
+    &::after {
+      background: none;
+      border: none;
+    }
+  }
+
+  &__bar {
+    @extend .bars__bar;
+    background-color: #748483;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: abs.rem(2);
+  }
+}

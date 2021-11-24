@@ -1,0 +1,19 @@
+@use "sass:math";
+
+$gray1: #b1b1b1;
+$gray2: #9e9e9e;
+$gray3: #474747;
+$gray4: #272727;
+$gray5: #171717;
+
+$l-blue: #2d8beb;
+$d-blue: #16558a;
+
+@function rem($val) {
+  @return (math.div($val, 16)) + rem;
+}
+
+@mixin square($s) {
+  width: rem($s);
+  height: rem($s);
+}

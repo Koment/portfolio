@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="28px" height="21px" viewBox="0 0 28 21" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="filter_1">
+      <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.61960787 0 0 0 0 0.61960787 0 0 0 0 0.61960787 0 0 0 1 0" />
+    </filter>
+    <path d="M0 0L21 0L21 21L0 21L0 0Z" id="path_1" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <path d="M4.5 0L9 5L0 5L4.5 0Z" transform="matrix(-1 -8.742278E-08 8.742278E-08 -1 27.999939 18.999985)" id="Triangle" fill="#9E9E9E" fill-rule="evenodd" stroke="none" />
+  <g id="Search-icon-2" transform="matrix(-4.371139E-08 1 -1 -4.371139E-08 21 0)" filter="url(#filter_1)">
+    <path d="M0 0L21 0L21 21L0 21L0 0Z" id="Background" fill="none" fill-rule="evenodd" stroke="none" />
+    <g clip-path="url(#mask_1)">
+      <path d="M7.14001 0C3.19266 0 7.62939e-06 3.19266 7.62939e-06 7.14C7.62939e-06 11.0873 3.19266 14.28 7.14001 14.28C8.5493 14.28 9.8536 13.8666 10.9594 13.1644L16.1175 18.3225L17.9025 16.5375L12.81 11.4581C13.7255 10.2572 14.28 8.76914 14.28 7.14C14.28 3.19266 11.0873 0 7.14001 0L7.14001 0ZM7.13997 1.67999C10.1636 1.67999 12.6 4.11632 12.6 7.13999C12.6 10.1637 10.1636 12.6 7.13997 12.6C4.1163 12.6 1.67997 10.1637 1.67997 7.13999C1.67997 4.11632 4.1163 1.67999 7.13997 1.67999L7.13997 1.67999Z" transform="translate(1.6798477 1.2599487)" id="Shape" fill="#FFFFFF" fill-rule="evenodd" stroke="none" />
+    </g>
+  </g>
+</svg>

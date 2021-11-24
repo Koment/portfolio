@@ -1,0 +1,22 @@
+{
+  "name": "portfcssgrid",
+  "version": "1.0.0",
+  "description": "learn css grid, preprocessors, gulp",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cssgrid",
+    "preprocessors",
+    "gulp"
+  ],
+  "author": "Kom",
+  "license": "ISC",
+  "dependencies": {
+    "smart-grid": "^2.1.2"
+  },
+  "devDependencies": {
+    "sass": "^1.43.4"
+  }
+}
