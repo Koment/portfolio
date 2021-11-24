@@ -153,7 +153,7 @@
 .bars {
   @include abs.size(6);
   margin-right: abs.rem(15);
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-top-left-radius: abs.rem(15);
   overflow: hidden;
   align-items: center;
@@ -165,7 +165,7 @@
     // background-color: abs.$gray1;
     height: abs.rem(7);
     // padding: 0 abs.rem(8);
-    border: 1px solid abs.$gray5;
+    // border: 1px solid abs.$gray5;
     &::before {
       content: "";
       width: abs.rem(8);
@@ -209,7 +209,7 @@
 
         &:first-child {
           & .bars__lines {
-            height: abs.rem(15);
+            height: abs.rem(18);
           }
         }
 
@@ -244,9 +244,9 @@
 .hud-header {
   background-color: #333;
   border-top: 2px solid abs.$gray5;
-  border-bottom: 2px solid abs.$gray5;
+  border-bottom: 1px solid abs.$gray5;
   display: flex;
-  padding: abs.rem(5) 0 abs.rem(5) abs.rem(12);
+  padding: abs.rem(3) 0 abs.rem(3) abs.rem(12);
   font-family: "AdobeCleanUX_light";
 
   &__toggleicons {
@@ -305,9 +305,9 @@
     padding: 0 abs.rem(10) 0 abs.rem(5);
     border-right: 2px solid #000;
     align-items: center;
-    @include abs.sm-block() {
-      display: none;
-    }
+    // @include abs.sm-block() {
+    //   display: none;
+    // }
   }
 
   &__name {
@@ -341,104 +341,163 @@
 .portfLayer {
   display: flex;
   height: abs.rem(26);
-}
+  border-bottom: 1px solid #262626;
 
-.portfLayer-left {
-  @extend .hud;
-  flex-direction: row;
-  background-color: #303030;
-  padding: abs.rem(1) 0;
-  &__toggleicons {
-    @extend .hud-header__toggleicons;
-    padding-left: abs.rem(12);
-    border: none;
-    & ul {
-      & li {
-        background-color: #222;
+  .portfLayer-left {
+    @extend .hud;
+    flex-direction: row;
+    background-color: #303030;
+    padding: abs.rem(1) 0;
+    &__toggleicons {
+      @extend .hud-header__toggleicons;
+      padding-left: abs.rem(12);
+      border: none;
+      & ul {
+        & li {
+          background-color: #222;
+
+          & input {
+            display: none;
+          }
+
+          & input:checked ~ label {
+            & img {
+              display: none;
+            }
+          }
+          & label {
+            @include abs.square(20);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
       }
     }
-  }
-  &__lable {
-    @extend .hud-header__lable;
-    // margin: 0;
-    padding: 0;
-    border: none;
-    & img {
-      width: abs.rem(7);
-      padding: 0 abs.rem(7);
-    }
-  }
-  &__lable-item {
-    // @extend .portfolio-title__lable;
-    @include abs.square(18);
-    background-color: #a9ccc8;
-  }
-  &__number {
-    @extend .hud-header__number;
-    border: none;
-    & p {
+    &__layer-button {
+      display: flex;
       margin-right: auto;
+      cursor: pointer;
     }
-  }
-  &__name {
-    @extend .hud-header__name;
-    // overflow: hidden;
-    & img {
-      height: abs.rem(20);
-      max-width: none;
-      margin-right: abs.rem(5);
-    }
-    border: none;
-  }
-
-  &__trkmat {
-    @extend .hud-header__trkmat;
-    border: none;
-    justify-content: space-between;
-
-    & img {
-      margin-right: abs.rem(8);
-    }
-
-    & select {
-      background-color: #1c1c1c;
+    &__lable {
+      @extend .hud-header__lable;
+      // margin: 0;
+      padding: 0;
       border: none;
-      color: abs.$gray1;
-      font-family: "AdobeCleanUX_light";
-      height: fit-content;
-
-      & option {
-        border-radius: 0;
-        border: none;
-        background-color: red;
+      & img {
+        width: abs.rem(7);
+        padding: 0 abs.rem(7);
       }
+    }
+    &__lable-item {
+      // @extend .portfolio-title__lable;
+      @include abs.square(18);
+      background-color: #a9ccc8;
+    }
+    &__number {
+      @extend .hud-header__number;
+      border: none;
+      & p {
+        margin-right: auto;
+        @include abs.xs-block() {
+          padding-left: abs.rem(8);
+        }
+      }
+    }
+    &__name {
+      @extend .hud-header__name;
+      // overflow: hidden;
+      & img {
+        height: abs.rem(20);
+        max-width: none;
+        margin-right: abs.rem(5);
+      }
+      border: none;
+    }
+
+    &__trkmat {
+      @extend .hud-header__trkmat;
+      border: none;
+      justify-content: space-between;
+      align-items: center;
+
+      & img {
+        margin-right: abs.rem(8);
+      }
+
+      & select {
+        // background-color: #ff0;
+        background-color: #1c1c1c;
+        border: none;
+        border-radius: 0;
+        color: abs.$gray1;
+        font-family: "AdobeCleanUX_light";
+        height: fit-content;
+        max-width: abs.rem(60);
+
+        & option {
+          border-radius: 10px;
+          border: 10px solid red;
+          background-color: #f2f2f2;
+          color: #000;
+          font-family: inherit;
+          padding-left: 20px;
+          // min-width: abs.rem(50);
+          // margin: abs.rem(20);
+        }
+      }
+    }
+  }
+
+  .portfLayer-right {
+    @extend .bars;
+    border-radius: 0;
+    border: 0;
+    border-left: 1px solid #000;
+    &__barbg {
+      @extend .bars__scale;
+      background-color: #303030;
+      height: 100%;
+      border: 0;
+      &::before {
+        background: none;
+        border: none;
+      }
+
+      &::after {
+        background: none;
+        border: none;
+      }
+    }
+
+    &__bar {
+      @extend .bars__bar;
+      background-color: #748483;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: abs.rem(2);
     }
   }
 }
 
-.portfLayer-right {
-  @extend .bars;
-  border-radius: 0;
-  &__barbg {
-    @extend .bars__scale;
-    height: 100%;
-    &::before {
-      background: none;
-      border: none;
-    }
+.active {
+  &.portfLayer {
+    .portfLayer-left {
+      background-color: abs.$gray3;
 
-    &::after {
-      background: none;
-      border: none;
+      &__toggleicons {
+        & ul {
+          & li {
+            background-color: #323232;
+          }
+        }
+      }
     }
-  }
-
-  &__bar {
-    @extend .bars__bar;
-    background-color: #748483;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: abs.rem(2);
+    .portfLayer-right {
+      &__barbg {
+        background-color: abs.$gray3;
+      }
+    }
   }
 }

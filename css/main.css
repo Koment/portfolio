@@ -180,7 +180,7 @@ img {
   display: flex;
 }
 
-.hud, .portfLayer-left {
+.hud, .portfLayer .portfLayer-left {
   width: calc(50% - 0px);
   display: flex;
   flex-direction: column;
@@ -263,21 +263,20 @@ img {
   max-width: none;
 }
 
-.bars, .portfLayer-right {
+.bars, .portfLayer .portfLayer-right {
   width: calc(50% - 0px);
   margin-right: 0.9375rem;
-  border: 2px solid #000;
+  border: 1px solid #000;
   border-top-left-radius: 0.9375rem;
   overflow: hidden;
   align-items: center;
 }
-.bars__scale, .portfLayer-right__barbg, .bars__workarea {
+.bars__scale, .portfLayer .portfLayer-right__barbg, .bars__workarea {
   display: flex;
   justify-content: space-between;
   height: 0.4375rem;
-  border: 1px solid #171717;
 }
-.bars__scale::before, .portfLayer-right__barbg::before, .bars__workarea::before {
+.bars__scale::before, .portfLayer .portfLayer-right__barbg::before, .bars__workarea::before {
   content: "";
   width: 0.5rem;
   background-color: #2d8beb;
@@ -286,7 +285,7 @@ img {
   border: 1px solid #171717;
   height: inherit;
 }
-.bars__scale::after, .portfLayer-right__barbg::after, .bars__workarea::after {
+.bars__scale::after, .portfLayer .portfLayer-right__barbg::after, .bars__workarea::after {
   content: "";
   width: 0.5rem;
   background-color: #2d8beb;
@@ -295,7 +294,7 @@ img {
   border: 1px solid #171717;
   height: inherit;
 }
-.bars__bar, .portfLayer-right__bar {
+.bars__bar, .portfLayer .portfLayer-right__bar {
   background-color: #666;
   width: 100%;
   height: inherit;
@@ -312,7 +311,7 @@ img {
   justify-content: flex-end;
 }
 .bars__time ul li:first-child .bars__lines {
-  height: 0.9375rem;
+  height: 1.125rem;
 }
 @media screen and (max-width: 992px) {
   .bars__time ul li:nth-child(2n) {
@@ -338,66 +337,61 @@ img {
 .hud-header {
   background-color: #333;
   border-top: 2px solid #171717;
-  border-bottom: 2px solid #171717;
+  border-bottom: 1px solid #171717;
   display: flex;
-  padding: 0.3125rem 0 0.3125rem 0.75rem;
+  padding: 0.1875rem 0 0.1875rem 0.75rem;
   font-family: "AdobeCleanUX_light";
 }
-.hud-header__toggleicons, .portfLayer-left__toggleicons {
+.hud-header__toggleicons, .portfLayer .portfLayer-left__toggleicons {
   display: flex;
   align-items: center;
   border-right: 2px solid #000;
   padding-right: 0.3125rem;
 }
 @media screen and (max-width: 576px) {
-  .hud-header__toggleicons, .portfLayer-left__toggleicons {
+  .hud-header__toggleicons, .portfLayer .portfLayer-left__toggleicons {
     display: none;
   }
 }
-.hud-header__toggleicons ul, .portfLayer-left__toggleicons ul {
+.hud-header__toggleicons ul, .portfLayer .portfLayer-left__toggleicons ul {
   display: flex;
 }
-.hud-header__toggleicons ul li, .portfLayer-left__toggleicons ul li {
+.hud-header__toggleicons ul li, .portfLayer .portfLayer-left__toggleicons ul li {
   width: 1.25rem;
   height: 1.25rem;
   display: flex;
   margin-right: 0.125rem;
   justify-content: center;
 }
-.hud-header__toggleicons ul li:nth-child(3) img, .portfLayer-left__toggleicons ul li:nth-child(3) img {
+.hud-header__toggleicons ul li:nth-child(3) img, .portfLayer .portfLayer-left__toggleicons ul li:nth-child(3) img {
   width: 0.6875rem;
 }
-.hud-header__toggleicons ul li img, .portfLayer-left__toggleicons ul li img {
+.hud-header__toggleicons ul li img, .portfLayer .portfLayer-left__toggleicons ul li img {
   width: 0.9375rem;
   max-width: none;
 }
-.hud-header__lable, .portfLayer-left__lable {
+.hud-header__lable, .portfLayer .portfLayer-left__lable {
   display: flex;
   padding: 0 0.625rem 0 0.9375rem;
   border-right: 2px solid #000;
   align-items: center;
 }
-.hud-header__lable img, .portfLayer-left__lable img {
+.hud-header__lable img, .portfLayer .portfLayer-left__lable img {
   width: 0.875rem;
   max-width: none;
 }
 @media screen and (max-width: 720px) {
-  .hud-header__lable, .portfLayer-left__lable {
+  .hud-header__lable, .portfLayer .portfLayer-left__lable {
     display: none;
   }
 }
-.hud-header__number, .portfLayer-left__number {
+.hud-header__number, .portfLayer .portfLayer-left__number {
   display: flex;
   padding: 0 0.625rem 0 0.3125rem;
   border-right: 2px solid #000;
   align-items: center;
 }
-@media screen and (max-width: 720px) {
-  .hud-header__number, .portfLayer-left__number {
-    display: none;
-  }
-}
-.hud-header__name, .portfLayer-left__name {
+.hud-header__name, .portfLayer .portfLayer-left__name {
   display: flex;
   flex-grow: 1;
   padding: 0 0.3125rem;
@@ -405,10 +399,10 @@ img {
   overflow: hidden;
   align-items: center;
 }
-.hud-header__name p, .portfLayer-left__name p {
+.hud-header__name p, .portfLayer .portfLayer-left__name p {
   font-family: "AdobeCleanUX_light";
 }
-.hud-header__trkmat, .portfLayer-left__trkmat {
+.hud-header__trkmat, .portfLayer .portfLayer-left__trkmat {
   display: flex;
   border-right: 2px solid #000;
   padding: 0 0.3125rem;
@@ -416,98 +410,140 @@ img {
   overflow: hidden;
 }
 @media screen and (max-width: 992px) {
-  .hud-header__trkmat, .portfLayer-left__trkmat {
+  .hud-header__trkmat, .portfLayer .portfLayer-left__trkmat {
     display: none;
   }
 }
-.hud-header__trkmat p, .portfLayer-left__trkmat p {
+.hud-header__trkmat p, .portfLayer .portfLayer-left__trkmat p {
   font-family: "AdobeCleanUX_light";
 }
 
 .portfLayer {
   display: flex;
   height: 1.625rem;
+  border-bottom: 1px solid #262626;
 }
-
-.portfLayer-left {
+.portfLayer .portfLayer-left {
   flex-direction: row;
   background-color: #303030;
   padding: 0.0625rem 0;
 }
-.portfLayer-left__toggleicons {
+.portfLayer .portfLayer-left__toggleicons {
   padding-left: 0.75rem;
   border: none;
 }
-.portfLayer-left__toggleicons ul li {
+.portfLayer .portfLayer-left__toggleicons ul li {
   background-color: #222;
 }
-.portfLayer-left__lable {
+.portfLayer .portfLayer-left__toggleicons ul li input {
+  display: none;
+}
+.portfLayer .portfLayer-left__toggleicons ul li input:checked ~ label img {
+  display: none;
+}
+.portfLayer .portfLayer-left__toggleicons ul li label {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfLayer .portfLayer-left__layer-button {
+  display: flex;
+  margin-right: auto;
+  cursor: pointer;
+}
+.portfLayer .portfLayer-left__lable {
   padding: 0;
   border: none;
 }
-.portfLayer-left__lable img {
+.portfLayer .portfLayer-left__lable img {
   width: 0.4375rem;
   padding: 0 0.4375rem;
 }
-.portfLayer-left__lable-item {
+.portfLayer .portfLayer-left__lable-item {
   width: 1.125rem;
   height: 1.125rem;
   background-color: #a9ccc8;
 }
-.portfLayer-left__number {
+.portfLayer .portfLayer-left__number {
   border: none;
 }
-.portfLayer-left__number p {
+.portfLayer .portfLayer-left__number p {
   margin-right: auto;
 }
-.portfLayer-left__name {
+@media screen and (max-width: 576px) {
+  .portfLayer .portfLayer-left__number p {
+    padding-left: 0.5rem;
+  }
+}
+.portfLayer .portfLayer-left__name {
   border: none;
 }
-.portfLayer-left__name img {
+.portfLayer .portfLayer-left__name img {
   height: 1.25rem;
   max-width: none;
   margin-right: 0.3125rem;
 }
-.portfLayer-left__trkmat {
+.portfLayer .portfLayer-left__trkmat {
   border: none;
   justify-content: space-between;
+  align-items: center;
 }
-.portfLayer-left__trkmat img {
+.portfLayer .portfLayer-left__trkmat img {
   margin-right: 0.5rem;
 }
-.portfLayer-left__trkmat select {
+.portfLayer .portfLayer-left__trkmat select {
   background-color: #1c1c1c;
   border: none;
+  border-radius: 0;
   color: #b1b1b1;
   font-family: "AdobeCleanUX_light";
   height: fit-content;
+  max-width: 3.75rem;
 }
-.portfLayer-left__trkmat select option {
+.portfLayer .portfLayer-left__trkmat select option {
+  border-radius: 10px;
+  border: 10px solid red;
+  background-color: #f2f2f2;
+  color: #000;
+  font-family: inherit;
+  padding-left: 20px;
+}
+.portfLayer .portfLayer-right {
   border-radius: 0;
-  border: none;
-  background-color: red;
+  border: 0;
+  border-left: 1px solid #000;
 }
-
-.portfLayer-right {
-  border-radius: 0;
-}
-.portfLayer-right__barbg {
+.portfLayer .portfLayer-right__barbg {
+  background-color: #303030;
   height: 100%;
+  border: 0;
 }
-.portfLayer-right__barbg::before {
+.portfLayer .portfLayer-right__barbg::before {
   background: none;
   border: none;
 }
-.portfLayer-right__barbg::after {
+.portfLayer .portfLayer-right__barbg::after {
   background: none;
   border: none;
 }
-.portfLayer-right__bar {
+.portfLayer .portfLayer-right__bar {
   background-color: #748483;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding: 0.125rem;
+}
+
+.active.portfLayer .portfLayer-left {
+  background-color: #474747;
+}
+.active.portfLayer .portfLayer-left__toggleicons ul li {
+  background-color: #323232;
+}
+.active.portfLayer .portfLayer-right__barbg {
+  background-color: #474747;
 }
 
 /* reset end */
