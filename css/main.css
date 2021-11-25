@@ -1,19 +1,3 @@
-@font-face {
-  font-family: "AdobeCleanUX_bold";
-  src: url(/adobeClean/AdobeCleanUXBold.otf);
-}
-@font-face {
-  font-family: "AdobeCleanUX_regular";
-  src: url(/adobeClean/AdobeCleanUXRegular.otf);
-}
-@font-face {
-  font-family: "AdobeCleanUX_light";
-  src: url(/adobeClean/AdobeCleanUXLight.otf);
-}
-@font-face {
-  font-family: "AdobeCleanUX_medium";
-  src: url(/adobeClean/AdobeCleanUXMedium.otf);
-}
 body,
 div,
 dl,
@@ -124,10 +108,26 @@ img {
   height: auto;
 }
 
-* {
-  font-family: AdobeCleanUX_regular;
+body {
+  font-family: "AdobeCleanUX_regular";
 }
 
+@font-face {
+  font-family: "AdobeCleanUX_bold";
+  src: url(/adobeClean/AdobeCleanUXBold.otf);
+}
+@font-face {
+  font-family: "AdobeCleanUX_regular";
+  src: url(/adobeClean/AdobeCleanUXRegular.otf);
+}
+@font-face {
+  font-family: "AdobeCleanUX_light";
+  src: url(/adobeClean/AdobeCleanUXLight.otf);
+}
+@font-face {
+  font-family: "AdobeCleanUX_medium";
+  src: url(/adobeClean/AdobeCleanUXMedium.otf);
+}
 .portfolio-section {
   background-color: #171717;
   color: #b1b1b1;
@@ -180,8 +180,8 @@ img {
   display: flex;
 }
 
-.hud, .portfLayer .portfLayer-left {
-  width: calc(50% - 0px);
+.hud, .portfLayer .expand__left, .portfLayer .portfLayer-left {
+  width: calc(50% - 8px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -263,9 +263,8 @@ img {
   max-width: none;
 }
 
-.bars, .portfLayer .portfLayer-right {
-  width: calc(50% - 0px);
-  margin-right: 0.9375rem;
+.bars, .portfLayer .expand__right, .portfLayer .portfLayer-right {
+  width: calc(50% - 8px);
   border: 1px solid #000;
   border-top-left-radius: 0.9375rem;
   overflow: hidden;
@@ -399,29 +398,24 @@ img {
   overflow: hidden;
   align-items: center;
 }
-.hud-header__name p, .portfLayer .portfLayer-left__name p {
-  font-family: "AdobeCleanUX_light";
-}
 .hud-header__trkmat, .portfLayer .portfLayer-left__trkmat {
   display: flex;
   border-right: 2px solid #000;
   padding: 0 0.3125rem;
   margin-right: 0.625rem;
   overflow: hidden;
+  flex-shrink: 0;
 }
 @media screen and (max-width: 992px) {
   .hud-header__trkmat, .portfLayer .portfLayer-left__trkmat {
     display: none;
   }
 }
-.hud-header__trkmat p, .portfLayer .portfLayer-left__trkmat p {
-  font-family: "AdobeCleanUX_light";
-}
 
 .portfLayer {
   display: flex;
-  height: 1.625rem;
   border-bottom: 1px solid #262626;
+  flex-wrap: wrap;
 }
 .portfLayer .portfLayer-left {
   flex-direction: row;
@@ -450,8 +444,8 @@ img {
 }
 .portfLayer .portfLayer-left__layer-button {
   display: flex;
-  margin-right: auto;
   cursor: pointer;
+  width: 100%;
 }
 .portfLayer .portfLayer-left__lable {
   padding: 0;
@@ -460,6 +454,8 @@ img {
 .portfLayer .portfLayer-left__lable img {
   width: 0.4375rem;
   padding: 0 0.4375rem;
+  transform: rotate(0deg);
+  transition: 1s ease-in-out;
 }
 .portfLayer .portfLayer-left__lable-item {
   width: 1.125rem;
@@ -478,12 +474,27 @@ img {
   }
 }
 .portfLayer .portfLayer-left__name {
+  font-family: "adobecleanux_medium";
+  font-size: 1.125rem;
   border: none;
 }
 .portfLayer .portfLayer-left__name img {
   height: 1.25rem;
   max-width: none;
   margin-right: 0.3125rem;
+}
+.portfLayer .portfLayer-left__name p {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 0.3125rem;
+}
+.portfLayer .portfLayer-left__name p::before {
+  content: "[";
+}
+.portfLayer .portfLayer-left__name p::after {
+  content: "]";
 }
 .portfLayer .portfLayer-left__trkmat {
   border: none;
@@ -503,12 +514,9 @@ img {
   max-width: 3.75rem;
 }
 .portfLayer .portfLayer-left__trkmat select option {
-  border-radius: 10px;
-  border: 10px solid red;
   background-color: #f2f2f2;
   color: #000;
   font-family: inherit;
-  padding-left: 20px;
 }
 .portfLayer .portfLayer-right {
   border-radius: 0;
@@ -534,6 +542,54 @@ img {
   align-items: flex-start;
   justify-content: space-between;
   padding: 0.125rem;
+  height: auto;
+}
+.portfLayer .expand {
+  display: flex;
+  max-height: 0vh;
+  transition: max-height 1s ease-in-out;
+}
+.portfLayer .expand__left {
+  font-family: "adobecleanux_regular";
+  font-size: 1.125rem;
+}
+.portfLayer .expand__title {
+  cursor: pointer;
+  padding-left: 8.125rem;
+}
+@media screen and (max-width: 992px) {
+  .portfLayer .expand__title {
+    padding-left: 0.9375rem;
+  }
+}
+.portfLayer .expand__title img {
+  transform: rotate(0deg);
+  transition: 1s ease-in-out;
+}
+.portfLayer .expand__title.expd img {
+  transform: rotate(90deg);
+  transition: 1s ease-in-out;
+}
+.portfLayer .expand__title.expd ~ .expand__descr {
+  max-height: 50vh;
+  transition: 1s ease-in-out;
+}
+.portfLayer .expand__descr {
+  padding-left: 9.6875rem;
+  padding-right: 0.9375rem;
+  font-family: "adobecleanux_light";
+  font-size: 0.9375rem;
+  max-height: 0vh;
+  transition: 1s ease-in-out;
+}
+@media screen and (max-width: 992px) {
+  .portfLayer .expand__descr {
+    padding-left: 2.8125rem;
+  }
+}
+.portfLayer .expand__right {
+  border-radius: 0;
+  border: none;
 }
 
 .active.portfLayer .portfLayer-left {
@@ -542,10 +598,25 @@ img {
 .active.portfLayer .portfLayer-left__toggleicons ul li {
   background-color: #323232;
 }
+.active.portfLayer .portfLayer-left__lable img {
+  transform: rotate(90deg);
+  transition: 1s ease-in-out;
+}
+.active.portfLayer .portfLayer-left__name p {
+  background-color: #b1b1b1;
+  color: #171717;
+}
 .active.portfLayer .portfLayer-right__barbg {
   background-color: #474747;
 }
-
-/* reset end */
+.active.portfLayer .portfLayer-right__bar {
+  background: linear-gradient(to top, #7d9a96, #b0c4c3);
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+.active.portfLayer .expand {
+  max-height: 50vh;
+  transition: max-height 1s ease-in-out;
+}
 
 /*# sourceMappingURL=main.css.map */

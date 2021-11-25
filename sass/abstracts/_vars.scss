@@ -9,6 +9,10 @@ $gray5: #171717;
 $l-blue: #2d8beb;
 $d-blue: #16558a;
 
+$aqua-label: #a9ccc8;
+$aqua-layer: #748483;
+$aqua-layer-sel: linear-gradient(to top, #7d9a96, #b0c4c3);
+
 @function rem($val) {
   @return (math.div($val, 16)) + rem;
 }

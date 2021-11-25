@@ -152,7 +152,7 @@
 
 .bars {
   @include abs.size(6);
-  margin-right: abs.rem(15);
+  // margin-right: abs.rem(15);
   border: 1px solid #000;
   border-top-left-radius: abs.rem(15);
   overflow: hidden;
@@ -317,10 +317,6 @@
     border-right: 2px solid #000;
     overflow: hidden;
     align-items: center;
-
-    & p {
-      font-family: "AdobeCleanUX_light";
-    }
   }
 
   &__trkmat {
@@ -329,19 +325,18 @@
     padding: 0 abs.rem(5);
     margin-right: abs.rem(10);
     overflow: hidden;
+    flex-shrink: 0;
     @include abs.md-block() {
       display: none;
-    }
-    & p {
-      font-family: "AdobeCleanUX_light";
     }
   }
 }
 
 .portfLayer {
   display: flex;
-  height: abs.rem(26);
+  // height: abs.rem(26);
   border-bottom: 1px solid #262626;
+  flex-wrap: wrap;
 
   .portfLayer-left {
     @extend .hud;
@@ -376,8 +371,9 @@
     }
     &__layer-button {
       display: flex;
-      margin-right: auto;
+      // margin-right: auto;
       cursor: pointer;
+      width: 100%;
     }
     &__lable {
       @extend .hud-header__lable;
@@ -387,6 +383,8 @@
       & img {
         width: abs.rem(7);
         padding: 0 abs.rem(7);
+        transform: rotate(0deg);
+        transition: 1s ease-in-out;
       }
     }
     &__lable-item {
@@ -406,11 +404,28 @@
     }
     &__name {
       @extend .hud-header__name;
+      font-family: "adobecleanux_medium";
+      font-size: abs.rem(18);
       // overflow: hidden;
       & img {
         height: abs.rem(20);
         max-width: none;
         margin-right: abs.rem(5);
+      }
+      & p {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding-left: abs.rem(5);
+
+        &::before {
+          content: "[";
+        }
+
+        &::after {
+          content: "]";
+        }
       }
       border: none;
     }
@@ -436,14 +451,9 @@
         max-width: abs.rem(60);
 
         & option {
-          border-radius: 10px;
-          border: 10px solid red;
           background-color: #f2f2f2;
           color: #000;
           font-family: inherit;
-          padding-left: 20px;
-          // min-width: abs.rem(50);
-          // margin: abs.rem(20);
         }
       }
     }
@@ -472,11 +482,72 @@
 
     &__bar {
       @extend .bars__bar;
-      background-color: #748483;
+      background-color: abs.$aqua-layer;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       padding: abs.rem(2);
+      height: auto;
+    }
+  }
+
+  & .expand {
+    display: flex;
+
+    max-height: 0vh;
+    transition: max-height 1s ease-in-out;
+
+    // width: 100%;
+
+    &__left {
+      @extend .hud;
+      font-family: "adobecleanux_regular";
+      font-size: abs.rem(18);
+      // padding-left: abs.rem(130);
+    }
+
+    &__title {
+      cursor: pointer;
+      padding-left: abs.rem(130);
+
+      @include abs.md-block() {
+        padding-left: abs.rem(15);
+      }
+
+      & img {
+        transform: rotate(0deg);
+        transition: 1s ease-in-out;
+      }
+
+      &.expd {
+        & img {
+          transform: rotate(90deg);
+          transition: 1s ease-in-out;
+        }
+      }
+
+      &.expd ~ .expand__descr {
+        max-height: 50vh;
+        transition: 1s ease-in-out;
+      }
+    }
+
+    &__descr {
+      padding-left: abs.rem(155);
+      padding-right: abs.rem(15);
+      font-family: "adobecleanux_light";
+      font-size: abs.rem(15);
+      max-height: 0vh;
+      transition: 1s ease-in-out;
+      @include abs.md-block() {
+        padding-left: abs.rem(45);
+      }
+    }
+
+    &__right {
+      @extend .bars;
+      border-radius: 0;
+      border: none;
     }
   }
 }
@@ -493,11 +564,36 @@
           }
         }
       }
+
+      &__lable {
+        & img {
+          transform: rotate(90deg);
+          transition: 1s ease-in-out;
+        }
+      }
+
+      &__name {
+        & p {
+          background-color: abs.$gray1;
+          color: abs.$gray5;
+        }
+      }
     }
     .portfLayer-right {
       &__barbg {
         background-color: abs.$gray3;
       }
+
+      &__bar {
+        background: abs.$aqua-layer-sel;
+        border-top: 1px solid #fff;
+        border-left: 1px solid #fff;
+      }
+    }
+
+    .expand {
+      max-height: 50vh;
+      transition: max-height 1s ease-in-out;
     }
   }
 }

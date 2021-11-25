@@ -150,7 +150,7 @@
                 </li>
               </ul>
             </div>
-            <div class="portfLayer-left__layer-button">
+            <div class="portfLayer-left__layer-button" onclick="expand(this)">
               <div class="portfLayer-left__lable">
                 <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
                 <div class="portfLayer-left__lable-item"></div>
@@ -166,9 +166,11 @@
             <div class="portfLayer-left__trkmat">
               <img src="./footages/potfSection/parent.svg" alt="" srcset="" />
               <select name="none" id="">
-                <option value="none">NoneNoneNoneNoneNone</option>
-                <option value="none">None</option>
-                <option value="none">None</option>
+                <div>
+                  <option value="none">NoneNoneNoneNoneNone</option>
+                  <option value="none"><p>None</p></option>
+                  <option value="none"><span>None</span></option>
+                </div>
               </select>
             </div>
           </div>
@@ -188,7 +190,35 @@
               </div>
             </div>
           </div>
+          <div class="expand">
+            <div class="expand__left">
+              <p class="expand__title" onclick="expd(this)">
+                <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
+                Description
+              </p>
+              <div class="expand__descr">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                  vero recusandae! A illum officiis consequuntur similique
+                  provident ipsum dignissimos accusantium!
+                </p>
+              </div>
+            </div>
+            <div class="expand__right">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                vero recusandae! A illum officiis consequuntur similique
+                provident ipsum dignissimos accusantium!
+              </p>
+            </div>
+          </div>
         </div>
+
+        <!-- <div class="expand">
+          <div class="expand__left"></div>
+          <div class="expand__right"></div>
+        </div> -->
+
         <div class="portfLayer active">
           <div class="portfLayer-left">
             <div class="portfLayer-left__toggleicons">
@@ -227,7 +257,7 @@
                 </li>
               </ul>
             </div>
-            <div class="portfLayer-left__layer-button">
+            <div class="portfLayer-left__layer-button" onclick="expand(this)">
               <div class="portfLayer-left__lable">
                 <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
                 <div class="portfLayer-left__lable-item"></div>
@@ -265,9 +295,40 @@
               </div>
             </div>
           </div>
+          <div class="expand">
+            <div class="expand__left">
+              <p class="expand__title" onclick="expd(this)">
+                <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
+                Description
+              </p>
+              <p class="expand__descr">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                vero recusandae! A illum officiis consequuntur similique
+                provident ipsum dignissimos accusantium!
+              </p>
+            </div>
+            <div class="expand__right">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                vero recusandae! A illum officiis consequuntur similique
+                provident ipsum dignissimos accusantium!
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <!-- end portfolio container -->
     </section>
+
+    <script>
+      function expand(el) {
+        el.parentElement.parentElement.classList.toggle("active");
+      }
+
+      function expd(el) {
+        console.log(el);
+        el.classList.toggle("expd");
+      }
+    </script>
   </body>
 </html>
