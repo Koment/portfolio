@@ -552,6 +552,7 @@ body {
 .portfLayer .expand__left {
   font-family: "adobecleanux_regular";
   font-size: 1.125rem;
+  justify-content: flex-start;
 }
 .portfLayer .expand__title {
   cursor: pointer;
@@ -581,6 +582,7 @@ body {
   font-size: 0.9375rem;
   max-height: 0vh;
   transition: 1s ease-in-out;
+  overflow: hidden;
 }
 @media screen and (max-width: 992px) {
   .portfLayer .expand__descr {
@@ -617,6 +619,9 @@ body {
 .active.portfLayer .expand {
   max-height: 50vh;
   transition: max-height 1s ease-in-out;
+}
+.active.portfLayer .expand__left {
+  justify-content: flex-start;
 }
 
 /*# sourceMappingURL=main.css.map */

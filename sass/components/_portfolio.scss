@@ -503,6 +503,7 @@
       @extend .hud;
       font-family: "adobecleanux_regular";
       font-size: abs.rem(18);
+      justify-content: flex-start;
       // padding-left: abs.rem(130);
     }
 
@@ -539,6 +540,7 @@
       font-size: abs.rem(15);
       max-height: 0vh;
       transition: 1s ease-in-out;
+      overflow: hidden;
       @include abs.md-block() {
         padding-left: abs.rem(45);
       }
@@ -594,6 +596,9 @@
     .expand {
       max-height: 50vh;
       transition: max-height 1s ease-in-out;
+      &__left {
+        justify-content: flex-start;
+      }
     }
   }
 }
