@@ -496,6 +496,9 @@ body {
 .portfLayer .portfLayer-left__name p::after {
   content: "]";
 }
+.portfLayer .portfLayer-left__name p [data-tooltip]::after {
+  content: attr(data-tooltip);
+}
 .portfLayer .portfLayer-left__trkmat {
   border: none;
   justify-content: space-between;
@@ -571,12 +574,12 @@ body {
   transform: rotate(90deg);
   transition: 1s ease-in-out;
 }
-.portfLayer .expand__title.expd ~ .expand__descr {
+.portfLayer .expand__title.expd > .expand__descr {
   max-height: 50vh;
   transition: 1s ease-in-out;
 }
 .portfLayer .expand__descr {
-  padding-left: 9.6875rem;
+  padding-left: 1.5625rem;
   padding-right: 0.9375rem;
   font-family: "adobecleanux_light";
   font-size: 0.9375rem;
@@ -584,14 +587,13 @@ body {
   transition: 1s ease-in-out;
   overflow: hidden;
 }
-@media screen and (max-width: 992px) {
-  .portfLayer .expand__descr {
-    padding-left: 2.8125rem;
-  }
-}
 .portfLayer .expand__right {
   border-radius: 0;
   border: none;
+}
+.portfLayer .expand__right iframe {
+  width: 100%;
+  padding: 20px 0px;
 }
 
 .active.portfLayer .portfLayer-left {

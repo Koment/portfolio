@@ -426,8 +426,24 @@
         &::after {
           content: "]";
         }
+
+        & [data-tooltip]::after {
+          content: attr(data-tooltip);
+          // visibility: hidden;
+        }
       }
       border: none;
+
+      // &:hover .portfLayer-left__name--tooltiptext {
+      //   display: block;
+      // }
+
+      // &--tooltiptext {
+      //   background-color: #000;
+      //   position: absolute;
+      //   display: none;
+      //   top: 30px;
+      // }
     }
 
     &__trkmat {
@@ -527,29 +543,37 @@
         }
       }
 
-      &.expd ~ .expand__descr {
+      &.expd > .expand__descr {
         max-height: 50vh;
         transition: 1s ease-in-out;
       }
     }
 
     &__descr {
-      padding-left: abs.rem(155);
+      padding-left: abs.rem(25);
       padding-right: abs.rem(15);
       font-family: "adobecleanux_light";
       font-size: abs.rem(15);
       max-height: 0vh;
       transition: 1s ease-in-out;
       overflow: hidden;
-      @include abs.md-block() {
-        padding-left: abs.rem(45);
-      }
+      // @include abs.md-block() {
+      //   padding-left: abs.rem(45);
+      // }
+      // @include abs.sm-block() {
+      //   padding-left: abs.rem(15);
+      // }
     }
 
     &__right {
       @extend .bars;
       border-radius: 0;
       border: none;
+
+      & iframe {
+        width: 100%;
+        padding: 20px 0px;
+      }
     }
   }
 }
