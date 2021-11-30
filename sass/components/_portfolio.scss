@@ -365,6 +365,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
           }
         }
       }
@@ -525,11 +526,17 @@
 
     &__title {
       cursor: pointer;
-      padding-left: abs.rem(130);
+      padding: abs.rem(2) 0 abs.rem(4) abs.rem(130);
+      // border-bottom: 1px solid #1f1f1f;
 
       @include abs.md-block() {
         padding-left: abs.rem(15);
       }
+
+      // & p {
+      //   padding-left: 135px;
+      //   border-bottom: 1px solid #1f1f1f;
+      // }
 
       & img {
         transform: rotate(0deg);
@@ -543,23 +550,33 @@
         }
       }
 
-      &.expd > .expand__descr {
+      &.expd + .expand__descr {
         max-height: 50vh;
+        border-bottom: 1px solid #1f1f1f;
+        padding: abs.rem(4) abs.rem(15) abs.rem(4) abs.rem(150);
         transition: 1s ease-in-out;
+
+        @include abs.md-block() {
+          // padding-left: abs.rem(45);
+          padding: abs.rem(4) abs.rem(15) abs.rem(4) abs.rem(35);
+        }
       }
     }
 
     &__descr {
-      padding-left: abs.rem(25);
-      padding-right: abs.rem(15);
+      // padding: abs.rem(4) abs.rem(15) abs.rem(4) abs.rem(150);
+      padding-left: abs.rem(150);
+      // padding-right: abs.rem(15);
       font-family: "adobecleanux_light";
       font-size: abs.rem(15);
       max-height: 0vh;
       transition: 1s ease-in-out;
       overflow: hidden;
-      // @include abs.md-block() {
-      //   padding-left: abs.rem(45);
-      // }
+      border-bottom: 0px solid #1f1f1f;
+      @include abs.md-block() {
+        padding-left: abs.rem(35);
+        // padding: abs.rem(4) abs.rem(15) abs.rem(4) abs.rem(35);
+      }
       // @include abs.sm-block() {
       //   padding-left: abs.rem(15);
       // }
@@ -569,10 +586,32 @@
       @extend .bars;
       border-radius: 0;
       border: none;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
 
-      & iframe {
-        width: 100%;
-        padding: 20px 0px;
+      & a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        & span {
+          background: rgba(255, 255, 255, 0.5);
+          position: absolute;
+          transition: 0.3s ease-in-out;
+          // z-index: 0;
+        }
+
+        & img {
+          // width: 100%;
+          padding: 0 abs.rem(10);
+          // align-self: center;
+        }
+      }
+
+      & a:hover > span {
+        background: rgba(255, 255, 255, 1);
+        transition: 0.3s ease-in-out;
       }
     }
   }
@@ -618,7 +657,7 @@
     }
 
     .expand {
-      max-height: 50vh;
+      max-height: 30vh;
       transition: max-height 1s ease-in-out;
       &__left {
         justify-content: flex-start;

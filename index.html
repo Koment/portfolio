@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfelio Sass Flexbox Test</title>
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./lity/dist/lity.css" />
+    <script src="./lity/vendor/jquery.js"></script>
+    <script src="./lity/dist/lity.js"></script>
   </head>
   <body>
     <section class="monitor"></section>
@@ -218,7 +221,7 @@
               </div>
             </div>
             <div class="expand__right">
-              <iframe
+              <!-- <iframe
                 width="560"
                 height="315"
                 src="https://www.youtube.com/embed/eCb6gOU_724"
@@ -226,7 +229,15 @@
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
-              ></iframe>
+              ></iframe> -->
+              <a href="https://www.youtube.com/embed/eCb6gOU_724" data-lity>
+                <span class="playbtn">play button</span>
+                <img
+                  src="https://img.youtube.com/vi/eCb6gOU_724/mqdefault.jpg"
+                  alt=""
+                  srcset=""
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -319,37 +330,40 @@
           </div>
           <div class="expand">
             <div class="expand__left">
-              <div class="expand__title" onclick="expd(this)">
-                <p>
-                  <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
-                  Description
-                </p>
+              <!-- <div > -->
+              <p class="expand__title" onclick="expd(this)">
+                <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
+                Description
+              </p>
 
-                <p class="expand__descr">
-                  DESCRIPTION Lorem ipsum dolor sit amet consectetur adipisicing
-                  elit. Unde, vero recusandae! A illum officiis consequuntur
-                  similique provident ipsum dignissimos accusantium!
-                </p>
-              </div>
-              <div class="expand__title" onclick="expd(this)">
-                <p>
-                  <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
-                  Tags
-                </p>
+              <p class="expand__descr">
+                DESCRIPTION Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Unde, vero recusandae! A illum officiis consequuntur
+                similique provident ipsum dignissimos accusantium!
+              </p>
+              <!-- </div> -->
+              <!-- <div class="expand__title" onclick="expd(this)"> -->
+              <p class="expand__title" onclick="expd(this)">
+                <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
+                Tags
+              </p>
 
-                <p class="expand__descr">
-                  TAGS Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Unde, vero recusandae! A illum officiis consequuntur similique
-                  provident ipsum dignissimos accusantium! !
-                </p>
-              </div>
+              <p class="expand__descr">
+                TAGS Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Unde, vero recusandae! A illum officiis consequuntur similique
+                provident ipsum dignissimos accusantium! !
+              </p>
+              <!-- </div> -->
             </div>
             <div class="expand__right">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-                vero recusandae! A illum officiis consequuntur similique
-                provident ipsum dignissimos accusantium!
-              </p>
+              <a href="https://www.youtube.com/embed/eCb6gOU_724" data-lity>
+                <span class="playbtn">play button</span>
+                <img
+                  src="https://img.youtube.com/vi/eCb6gOU_724/mqdefault.jpg"
+                  alt=""
+                  srcset=""
+                />
+              </a>
             </div>
           </div>
         </div>
