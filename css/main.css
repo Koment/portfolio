@@ -445,6 +445,7 @@ body {
 }
 .portfLayer .portfLayer-left__layer-button {
   display: flex;
+  flex-basis: 50%;
   cursor: pointer;
   width: 100%;
 }
@@ -485,20 +486,18 @@ body {
   margin-right: 0.3125rem;
 }
 .portfLayer .portfLayer-left__name p {
-  display: flex;
-  align-items: center;
+  white-space: nowrap;
   width: 100%;
   height: 100%;
   padding-left: 0.3125rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .portfLayer .portfLayer-left__name p::before {
   content: "[";
 }
 .portfLayer .portfLayer-left__name p::after {
   content: "]";
-}
-.portfLayer .portfLayer-left__name p [data-tooltip]::after {
-  content: attr(data-tooltip);
 }
 .portfLayer .portfLayer-left__trkmat {
   border: none;
@@ -551,7 +550,7 @@ body {
 .portfLayer .expand {
   display: flex;
   max-height: 0vh;
-  transition: max-height 1s ease-in-out;
+  transition: max-height 0.5s ease-in;
 }
 .portfLayer .expand__left {
   font-family: "adobecleanux_regular";
@@ -561,6 +560,7 @@ body {
 .portfLayer .expand__title {
   cursor: pointer;
   padding: 0.125rem 0 0.25rem 8.125rem;
+  border-bottom: 1px solid #1f1f1f;
 }
 @media screen and (max-width: 992px) {
   .portfLayer .expand__title {
@@ -569,17 +569,17 @@ body {
 }
 .portfLayer .expand__title img {
   transform: rotate(0deg);
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .portfLayer .expand__title.expd img {
   transform: rotate(90deg);
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .portfLayer .expand__title.expd + .expand__descr {
   max-height: 50vh;
   border-bottom: 1px solid #1f1f1f;
   padding: 0.25rem 0.9375rem 0.25rem 9.375rem;
-  transition: 1s ease-in-out;
+  transition: 0.5s linear;
 }
 @media screen and (max-width: 992px) {
   .portfLayer .expand__title.expd + .expand__descr {
@@ -591,7 +591,7 @@ body {
   font-family: "adobecleanux_light";
   font-size: 0.9375rem;
   max-height: 0vh;
-  transition: 1s ease-in-out;
+  transition: 0.5s linear;
   overflow: hidden;
   border-bottom: 0px solid #1f1f1f;
 }
@@ -648,8 +648,8 @@ body {
   border-left: 1px solid #fff;
 }
 .active.portfLayer .expand {
-  max-height: 30vh;
-  transition: max-height 1s ease-in-out;
+  max-height: 80vh;
+  transition: max-height 1s ease-out;
 }
 .active.portfLayer .expand__left {
   justify-content: flex-start;

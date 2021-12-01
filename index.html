@@ -163,7 +163,10 @@
               </div>
               <div class="portfLayer-left__name">
                 <img src="./footages/potfSection/file.svg" alt="" srcset="" />
-                <p>Work&nbsp;namejhdfi&nbsp;idujg</p>
+                <p>
+                  Заставка для ток - шоу "Так или иначе" Заставка для ток - шоу
+                  "Так или иначе"
+                </p>
               </div>
             </div>
             <div class="portfLayer-left__trkmat">
@@ -195,30 +198,30 @@
           </div>
           <div class="expand">
             <div class="expand__left">
-              <div class="expand__title" onclick="expd(this)">
-                <p>
-                  <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
-                  Description
-                </p>
+              <!-- <div > -->
+              <p class="expand__title" onclick="expd(this)">
+                <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
+                Description
+              </p>
 
-                <p class="expand__descr">
-                  DESCRIPTION Lorem ipsum dolor sit amet consectetur adipisicing
-                  elit. Unde, vero recusandae! A illum officiis consequuntur
-                  similique provident ipsum dignissimos accusantium!
-                </p>
-              </div>
-              <div class="expand__title" onclick="expd(this)">
-                <p>
-                  <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
-                  Tags
-                </p>
+              <p class="expand__descr">
+                DESCRIPTION Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Unde, vero recusandae! A illum officiis consequuntur
+                similique provident ipsum dignissimos accusantium!
+              </p>
+              <!-- </div> -->
+              <!-- <div class="expand__title" onclick="expd(this)"> -->
+              <p class="expand__title" onclick="expd(this)">
+                <img src="./footages/potfSection/arow.svg" alt="" srcset="" />
+                Tags
+              </p>
 
-                <p class="expand__descr">
-                  TAGS Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Unde, vero recusandae! A illum officiis consequuntur similique
-                  provident ipsum dignissimos accusantium! !
-                </p>
-              </div>
+              <p class="expand__descr">
+                TAGS Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Unde, vero recusandae! A illum officiis consequuntur similique
+                provident ipsum dignissimos accusantium! !
+              </p>
+              <!-- </div> -->
             </div>
             <div class="expand__right">
               <!-- <iframe
@@ -296,7 +299,7 @@
               <div class="portfLayer-left__name">
                 <img src="./footages/potfSection/file.svg" alt="" srcset="" />
                 <p data-tooltip="Софийский собор" title="Софийский собор">
-                  Work&nbsp;namejhdfi&nbsp;idujg
+                  Заставка&nbsp;для&nbsp;ток&nbsp;-&nbsp;шоу&nbsp;"Так&nbsp;или&nbsp;иначе"
                 </p>
                 <!-- <span class="portfLayer-left__name--tooltiptext">
                   Tooltip text
@@ -379,6 +382,28 @@
       function expd(el) {
         console.log(el);
         el.classList.toggle("expd");
+      }
+
+      var youTubeURL =
+        "https://noembed.com/embed?url=https://www.youtube.com/embed/eCb6gOU_724";
+      var json = (function () {
+        var json = null;
+        $.ajax({
+          async: false,
+          global: false,
+          url: youTubeURL,
+          dataType: "json",
+          success: function (data) {
+            json = data;
+          },
+        });
+        return json;
+      })();
+
+      console.log(json);
+
+      function getVideoInfo(info) {
+        console.log(info);
       }
     </script>
   </body>
