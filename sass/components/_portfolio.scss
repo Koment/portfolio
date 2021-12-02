@@ -64,7 +64,7 @@
   justify-content: space-between;
   // padding-left: abs.rem(24);
   // padding-bottom: abs.rem(12);
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .hud-controls {
@@ -343,6 +343,7 @@
     flex-direction: row;
     background-color: #303030;
     padding: abs.rem(1) 0;
+    justify-content: flex-start;
     &__toggleicons {
       @extend .hud-header__toggleicons;
       padding-left: abs.rem(12);
@@ -372,10 +373,9 @@
     }
     &__layer-button {
       display: flex;
-      flex-basis: 50%;
-      // margin-right: auto;
       cursor: pointer;
-      width: 100%;
+      min-width: 0;
+      flex: 1 1 auto;
     }
     &__lable {
       @extend .hud-header__lable;
@@ -512,6 +512,7 @@
 
     max-height: 0vh;
     transition: max-height 0.5s ease-in;
+    overflow: hidden;
 
     // width: 100%;
 
@@ -595,10 +596,13 @@
         position: relative;
 
         & span {
-          background: rgba(255, 255, 255, 0.5);
+          // background: rgba(255, 255, 255, 0.5);
           position: absolute;
           transition: 0.3s ease-in-out;
           // z-index: 0;
+          width: 30%;
+          fill: rgb(255, 255, 255);
+          opacity: 0.7;
         }
 
         & img {
@@ -609,7 +613,8 @@
       }
 
       & a:hover > span {
-        background: rgba(255, 255, 255, 1);
+        // background: rgba(255, 255, 255, 1);
+        opacity: 1;
         transition: 0.3s ease-in-out;
       }
     }
